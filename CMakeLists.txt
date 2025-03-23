@@ -14,6 +14,8 @@ project(Boost VERSION 1.88.0 LANGUAGES CXX)
 
 set(BOOST_SUPERPROJECT_VERSION ${PROJECT_VERSION})
 set(BOOST_SUPERPROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR})
+#add PIC due to usr/local/lib/libboost_filesystem.a(operations.cpp.o): relocation R_X86_64_PC32 against symbol `_ZSt7nothrow@@GLIBCXX_3.4' can not be used when making a shared object; recompile with -fPIC during compling pcl
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/tools/cmake/include)
 
